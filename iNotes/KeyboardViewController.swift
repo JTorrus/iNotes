@@ -56,28 +56,28 @@ class KeyboardViewController: UIViewController {
             switch identifier {
             case Utils.notes.first!:
                 // DO
-                print("")
+                print(identifier)
             case Utils.notes[1]:
                 // RE
-                print("")
+                print(identifier)
             case Utils.notes[2]:
                 // MI
-                print("")
+                print(identifier)
             case Utils.notes[3]:
                 // FA
-                print("")
+                print(identifier)
             case Utils.notes[4]:
                 // SOL
-                print("")
+                print(identifier)
             case Utils.notes[5]:
                 // LA
-                print("")
+                print(identifier)
             case Utils.notes[6]:
                 // SI
-                print("")
+                print(identifier)
             case Utils.notes.last!:
                 // DO#
-                print("")
+                print(identifier)
             default:
                 break
             }
