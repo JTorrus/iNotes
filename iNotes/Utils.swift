@@ -1,5 +1,5 @@
 //
-//  Key.swift
+//  Utils.swift
 //  iNotes
 //
 //  Created by Alumne on 17/4/18.
@@ -7,9 +7,7 @@
 //
 
 import Foundation
-import AudioToolbox
 
-struct Key {
-    var note: String
-    var noteId: SystemSoundID
+class Utils {
+    static let notes = ["DO", "RE", "MI", "FA", "SOL", "LA", "SI", "DO#"]
 }
