@@ -7,17 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EFC6132720862968004FD9F7 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC6132620862968004FD9F7 /* CollectionViewController.swift */; };
+		EFC6132920862B8D004FD9F7 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC6132820862B8D004FD9F7 /* Key.swift */; };
+		EFC6132C20862D62004FD9F7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFC6132B20862D5A004FD9F7 /* AudioToolbox.framework */; };
 		EFCA01CB207FA6D800E227D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCA01CA207FA6D800E227D6 /* AppDelegate.swift */; };
-		EFCA01CD207FA6D800E227D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCA01CC207FA6D800E227D6 /* ViewController.swift */; };
 		EFCA01D0207FA6D800E227D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFCA01CE207FA6D800E227D6 /* Main.storyboard */; };
 		EFCA01D2207FA6D800E227D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFCA01D1207FA6D800E227D6 /* Assets.xcassets */; };
 		EFCA01D5207FA6D800E227D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFCA01D3207FA6D800E227D6 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EFC6132620862968004FD9F7 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		EFC6132820862B8D004FD9F7 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
+		EFC6132B20862D5A004FD9F7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		EFCA01C7207FA6D800E227D6 /* iNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFCA01CA207FA6D800E227D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EFCA01CC207FA6D800E227D6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EFCA01CF207FA6D800E227D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EFCA01D1207FA6D800E227D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EFCA01D4207FA6D800E227D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -29,17 +33,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFC6132C20862D62004FD9F7 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EFC6132A20862D5A004FD9F7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EFC6132B20862D5A004FD9F7 /* AudioToolbox.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EFCA01BE207FA6D800E227D6 = {
 			isa = PBXGroup;
 			children = (
 				EFCA01C9207FA6D800E227D6 /* iNotes */,
 				EFCA01C8207FA6D800E227D6 /* Products */,
+				EFC6132A20862D5A004FD9F7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,11 +69,12 @@
 			isa = PBXGroup;
 			children = (
 				EFCA01CA207FA6D800E227D6 /* AppDelegate.swift */,
-				EFCA01CC207FA6D800E227D6 /* ViewController.swift */,
 				EFCA01CE207FA6D800E227D6 /* Main.storyboard */,
 				EFCA01D1207FA6D800E227D6 /* Assets.xcassets */,
 				EFCA01D3207FA6D800E227D6 /* LaunchScreen.storyboard */,
 				EFCA01D6207FA6D800E227D6 /* Info.plist */,
+				EFC6132620862968004FD9F7 /* CollectionViewController.swift */,
+				EFC6132820862B8D004FD9F7 /* Key.swift */,
 			);
 			path = iNotes;
 			sourceTree = "<group>";
@@ -136,8 +151,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFCA01CD207FA6D800E227D6 /* ViewController.swift in Sources */,
+				EFC6132720862968004FD9F7 /* CollectionViewController.swift in Sources */,
 				EFCA01CB207FA6D800E227D6 /* AppDelegate.swift in Sources */,
+				EFC6132920862B8D004FD9F7 /* Key.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
