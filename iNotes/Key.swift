@@ -10,6 +10,6 @@ import Foundation
 import AudioToolbox
 
 struct Key {
-    var note: String
-    var noteId: SystemSoundID
+    var note: String = ""
+    var noteId: SystemSoundID = 0
 }

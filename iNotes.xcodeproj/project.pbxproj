@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF7260A52088E2BF00C836BD /* MI.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EF72609D2088E2BD00C836BD /* MI.mp3 */; };
+		EF7260A62088E2BF00C836BD /* SI.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EF72609E2088E2BD00C836BD /* SI.mp3 */; };
+		EF7260A72088E2BF00C836BD /* FA.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EF72609F2088E2BE00C836BD /* FA.mp3 */; };
+		EF7260A82088E2BF00C836BD /* RE.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EF7260A02088E2BE00C836BD /* RE.mp3 */; };
+		EF7260A92088E2BF00C836BD /* SOL.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EF7260A12088E2BE00C836BD /* SOL.mp3 */; };
+		EF7260AA2088E2BF00C836BD /* DO.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EF7260A22088E2BF00C836BD /* DO.mp3 */; };
+		EF7260AB2088E2BF00C836BD /* LA.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EF7260A32088E2BF00C836BD /* LA.mp3 */; };
+		EF7260AC2088E2BF00C836BD /* DO#.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EF7260A42088E2BF00C836BD /* DO#.mp3 */; };
 		EFC6132920862B8D004FD9F7 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC6132820862B8D004FD9F7 /* Key.swift */; };
 		EFC6132C20862D62004FD9F7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFC6132B20862D5A004FD9F7 /* AudioToolbox.framework */; };
 		EFC6132E20862FD8004FD9F7 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC6132D20862FD8004FD9F7 /* KeyboardViewController.swift */; };
@@ -18,6 +26,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EF72609D2088E2BD00C836BD /* MI.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = MI.mp3; sourceTree = "<group>"; };
+		EF72609E2088E2BD00C836BD /* SI.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = SI.mp3; sourceTree = "<group>"; };
+		EF72609F2088E2BE00C836BD /* FA.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = FA.mp3; sourceTree = "<group>"; };
+		EF7260A02088E2BE00C836BD /* RE.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = RE.mp3; sourceTree = "<group>"; };
+		EF7260A12088E2BE00C836BD /* SOL.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = SOL.mp3; sourceTree = "<group>"; };
+		EF7260A22088E2BF00C836BD /* DO.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = DO.mp3; sourceTree = "<group>"; };
+		EF7260A32088E2BF00C836BD /* LA.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = LA.mp3; sourceTree = "<group>"; };
+		EF7260A42088E2BF00C836BD /* DO#.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "DO#.mp3"; sourceTree = "<group>"; };
 		EFC6132820862B8D004FD9F7 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		EFC6132B20862D5A004FD9F7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		EFC6132D20862FD8004FD9F7 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
@@ -42,6 +58,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EF7260AD2088E2CB00C836BD /* audio */ = {
+			isa = PBXGroup;
+			children = (
+				EF7260A22088E2BF00C836BD /* DO.mp3 */,
+				EF7260A42088E2BF00C836BD /* DO#.mp3 */,
+				EF72609F2088E2BE00C836BD /* FA.mp3 */,
+				EF7260A32088E2BF00C836BD /* LA.mp3 */,
+				EF72609D2088E2BD00C836BD /* MI.mp3 */,
+				EF7260A02088E2BE00C836BD /* RE.mp3 */,
+				EF72609E2088E2BD00C836BD /* SI.mp3 */,
+				EF7260A12088E2BE00C836BD /* SOL.mp3 */,
+			);
+			name = audio;
+			path = "audioç";
+			sourceTree = "<group>";
+		};
 		EFC6132A20862D5A004FD9F7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +102,7 @@
 		EFCA01C9207FA6D800E227D6 /* iNotes */ = {
 			isa = PBXGroup;
 			children = (
+				EF7260AD2088E2CB00C836BD /* audio */,
 				EFCA01CA207FA6D800E227D6 /* AppDelegate.swift */,
 				EFC6132D20862FD8004FD9F7 /* KeyboardViewController.swift */,
 				EFCA01CE207FA6D800E227D6 /* Main.storyboard */,
@@ -141,8 +174,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF7260A82088E2BF00C836BD /* RE.mp3 in Resources */,
+				EF7260A62088E2BF00C836BD /* SI.mp3 in Resources */,
+				EF7260AC2088E2BF00C836BD /* DO#.mp3 in Resources */,
 				EFCA01D5207FA6D800E227D6 /* LaunchScreen.storyboard in Resources */,
+				EF7260A92088E2BF00C836BD /* SOL.mp3 in Resources */,
 				EFCA01D2207FA6D800E227D6 /* Assets.xcassets in Resources */,
+				EF7260AB2088E2BF00C836BD /* LA.mp3 in Resources */,
+				EF7260AA2088E2BF00C836BD /* DO.mp3 in Resources */,
+				EF7260A72088E2BF00C836BD /* FA.mp3 in Resources */,
+				EF7260A52088E2BF00C836BD /* MI.mp3 in Resources */,
 				EFCA01D0207FA6D800E227D6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

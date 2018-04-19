@@ -7,18 +7,21 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class KeyboardViewController: UIViewController {
     let keysNumber: CGFloat = 8
     var keyBoard: [UIView] = [UIView]()
     var keysWidth: CGFloat?
     var keysHeight: CGFloat?
+    var noteSoundIds: [Key] = [Key]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         keysHeight = self.view.frame.size.height
         keysWidth = self.view.frame.size.width / keysNumber
         
+        noteSoundIds = Utils.generateSoundIds()
         generateKeys(&keyBoard)
         drawKeys()
     }
@@ -51,37 +54,46 @@ class KeyboardViewController: UIViewController {
         }
     }
     
+    func backgroundTransition(view: UIView) {
+        UIView.animate(withDuration: 0.15, delay: 0.0, options: .autoreverse, animations: {
+            view.backgroundColor = UIColor.gray
+        }, completion: { finished in
+            view.backgroundColor = UIColor.white
+        })
+    }
+    
     @objc func tap (gesture: UITapGestureRecognizer) {
+        backgroundTransition(view: gesture.view!)
+        
         if let identifier = gesture.view?.accessibilityIdentifier {
             switch identifier {
             case Utils.notes.first!:
                 // DO
-                print(identifier)
+                AudioServicesPlaySystemSound(noteSoundIds[0].noteId)
             case Utils.notes[1]:
                 // RE
-                print(identifier)
+                AudioServicesPlaySystemSound(noteSoundIds[1].noteId)
             case Utils.notes[2]:
                 // MI
-                print(identifier)
+                AudioServicesPlaySystemSound(noteSoundIds[2].noteId)
             case Utils.notes[3]:
                 // FA
-                print(identifier)
+                AudioServicesPlaySystemSound(noteSoundIds[3].noteId)
             case Utils.notes[4]:
                 // SOL
-                print(identifier)
+                AudioServicesPlaySystemSound(noteSoundIds[4].noteId)
             case Utils.notes[5]:
                 // LA
-                print(identifier)
+                AudioServicesPlaySystemSound(noteSoundIds[5].noteId)
             case Utils.notes[6]:
                 // SI
-                print(identifier)
+                AudioServicesPlaySystemSound(noteSoundIds[6].noteId)
             case Utils.notes.last!:
                 // DO#
-                print(identifier)
+                AudioServicesPlaySystemSound(noteSoundIds[7].noteId)
             default:
                 break
             }
         }
     }
-    
 }
