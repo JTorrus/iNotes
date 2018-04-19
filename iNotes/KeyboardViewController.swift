@@ -24,6 +24,12 @@ class KeyboardViewController: UIViewController {
         noteSoundIds = Utils.generateSoundIds()
         generateKeys(&keyBoard)
         drawKeys()
+        
+        let swipeGestureRecognizer = UISwipeGestureRecognizer()
+        swipeGestureRecognizer.addTarget(self, action: #selector(swipe(gesture:)))
+        swipeGestureRecognizer.direction = .left
+        
+        self.view.addGestureRecognizer(swipeGestureRecognizer)
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,7 +38,7 @@ class KeyboardViewController: UIViewController {
     }
     
     func generateKeys(_ keyBoard: inout [UIView]) {
-        let offset: CGFloat = 128
+        let offset: CGFloat = 185
         
         for i in 0 ..< Int(keysNumber) {
             let newKey = UIView(frame: CGRect(x:CGFloat(i) * keysWidth!, y: offset, width: keysWidth!, height: keysHeight!))
@@ -95,5 +101,9 @@ class KeyboardViewController: UIViewController {
                 break
             }
         }
+    }
+    
+    @objc func swipe (gesture: UISwipeGestureRecognizer) {
+        print("GLISSANDO")
     }
 }
