@@ -26,8 +26,8 @@ class KeyboardViewController: UIViewController {
         drawKeys()
         
         let swipeGestureRecognizer = UISwipeGestureRecognizer()
-        swipeGestureRecognizer.addTarget(self, action: #selector(swipe(gesture:)))
-        swipeGestureRecognizer.direction = .left
+        swipeGestureRecognizer.addTarget(self, action: #selector(glissando(gesture:)))
+        swipeGestureRecognizer.direction = .right
         
         self.view.addGestureRecognizer(swipeGestureRecognizer)
     }
@@ -98,12 +98,13 @@ class KeyboardViewController: UIViewController {
                 // DO#
                 AudioServicesPlaySystemSound(noteSoundIds[7].noteId)
             default:
+                
                 break
             }
         }
     }
     
-    @objc func swipe (gesture: UISwipeGestureRecognizer) {
+    @objc func glissando (gesture: UISwipeGestureRecognizer) {
         print("GLISSANDO")
     }
 }
