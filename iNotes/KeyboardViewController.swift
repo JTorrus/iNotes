@@ -11,7 +11,9 @@ import AudioToolbox
 
 class KeyboardViewController: UIViewController {
     let keysNumber: CGFloat = 8
+    let offset: CGFloat = 220
     var keyBoard: [UIView] = [UIView]()
+    var notesPlaceHolder: [UIView] = [UIView]()
     var keysWidth: CGFloat?
     var keysHeight: CGFloat?
     var noteSoundIds: [Key] = [Key]()
@@ -23,7 +25,8 @@ class KeyboardViewController: UIViewController {
         
         noteSoundIds = Utils.generateSoundIds()
         generateKeys(&keyBoard)
-        drawKeys()
+        generatePlaceHolder(&notesPlaceHolder)
+        drawLayout()
         
         let swipeGestureRecognizer = UISwipeGestureRecognizer()
         swipeGestureRecognizer.addTarget(self, action: #selector(glissando(gesture:)))
@@ -38,10 +41,8 @@ class KeyboardViewController: UIViewController {
     }
     
     func generateKeys(_ keyBoard: inout [UIView]) {
-        let offset: CGFloat = 185
-        
         for i in 0 ..< Int(keysNumber) {
-            let newKey = UIView(frame: CGRect(x:CGFloat(i) * keysWidth!, y: offset, width: keysWidth!, height: keysHeight!))
+            let newKey = UIView(frame: CGRect(x: CGFloat(i) * keysWidth!, y: offset, width: keysWidth!, height: keysHeight!))
             let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tap(gesture:)))
             
             newKey.accessibilityIdentifier = Utils.notes[i]
@@ -54,9 +55,32 @@ class KeyboardViewController: UIViewController {
         }
     }
     
-    func drawKeys() {
+    func generatePlaceHolder(_ notesPlaceHolder: inout [UIView]) {
+        let totalHeight = self.view.frame.height - offset
+        let labelWidth = keysWidth! - 30
+        
+        for i in 0 ..< Int(keysNumber) {
+            let newPlaceHolder = UIView(frame: CGRect(x: CGFloat(i) * keysWidth!, y: 0, width: keysWidth!, height: totalHeight))
+            let placeHolderLabel = UILabel(frame: CGRect(x: 15, y: 75, width: labelWidth, height: 30))
+            
+            placeHolderLabel.textAlignment = .center
+            placeHolderLabel.text = Utils.notes[i]
+            
+            newPlaceHolder.addSubview(placeHolderLabel)
+            newPlaceHolder.accessibilityIdentifier = Utils.notes[i]
+            newPlaceHolder.backgroundColor = UIColor.white
+            
+            notesPlaceHolder.append(newPlaceHolder)
+        }
+    }
+    
+    func drawLayout() {
         for key in keyBoard {
             self.view.addSubview(key)
+        }
+        
+        for noteLabel in notesPlaceHolder {
+            self.view.addSubview(noteLabel)
         }
     }
     
