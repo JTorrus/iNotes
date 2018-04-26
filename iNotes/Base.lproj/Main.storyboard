@@ -46,7 +46,7 @@
         <!--Queen - The Show Must Go On-->
         <scene sceneID="k1Z-DY-Qor">
             <objects>
-                <viewController id="Vpg-ah-KJ4" sceneMemberID="viewController">
+                <viewController id="Vpg-ah-KJ4" customClass="QueenViewController" customModule="iNotes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="j9c-Qb-axZ">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

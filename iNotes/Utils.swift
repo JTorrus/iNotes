@@ -8,9 +8,11 @@
 
 import Foundation
 import AudioToolbox
+import AVFoundation
 
 class Utils {
     static let notes = ["DO", "RE", "MI", "FA", "SOL", "LA", "SI", "DO#"]
+    static let musicFile = "tsmgo"
     static let defaultExtension = "mp3"
     
     static func generateSoundIds() -> [Key] {
@@ -28,5 +30,16 @@ class Utils {
         }
         
         return arrayOfSoundsId
+    }
+    
+    static func generateMusicUrl() -> AVAudioPlayer? {
+        var musicAudioPlayer: AVAudioPlayer?
+        
+        if let soundMusicUrl = Bundle.main.url(forResource: musicFile, withExtension: defaultExtension) {
+            musicAudioPlayer = try! AVAudioPlayer(contentsOf: soundMusicUrl)
+            musicAudioPlayer!.prepareToPlay()
+        }
+        
+        return musicAudioPlayer
     }
 }
