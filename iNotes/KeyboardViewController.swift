@@ -65,6 +65,7 @@ class KeyboardViewController: UIViewController {
             
             placeHolderLabel.textAlignment = .center
             placeHolderLabel.text = Utils.notes[i]
+            placeHolderLabel.alpha = 0
             
             newPlaceHolder.addSubview(placeHolderLabel)
             newPlaceHolder.accessibilityIdentifier = Utils.notes[i]
@@ -84,45 +85,44 @@ class KeyboardViewController: UIViewController {
         }
     }
     
-    func backgroundTransition(view: UIView) {
-        UIView.animate(withDuration: 0.15, delay: 0.0, options: .autoreverse, animations: {
-            view.backgroundColor = UIColor.gray
-        }, completion: { finished in
-            view.backgroundColor = UIColor.white
-        })
-    }
-    
     @objc func tap (gesture: UITapGestureRecognizer) {
-        backgroundTransition(view: gesture.view!)
+        Animations.backgroundTransition(view: gesture.view!)
         
         if let identifier = gesture.view?.accessibilityIdentifier {
             switch identifier {
             case Utils.notes.first!:
                 // DO
                 AudioServicesPlaySystemSound(noteSoundIds[0].noteId)
+                Animations.alphaManipulation(view: notesPlaceHolder[0])
             case Utils.notes[1]:
                 // RE
                 AudioServicesPlaySystemSound(noteSoundIds[1].noteId)
+                Animations.alphaManipulation(view: notesPlaceHolder[1])
             case Utils.notes[2]:
                 // MI
                 AudioServicesPlaySystemSound(noteSoundIds[2].noteId)
+                Animations.alphaManipulation(view: notesPlaceHolder[2])
             case Utils.notes[3]:
                 // FA
                 AudioServicesPlaySystemSound(noteSoundIds[3].noteId)
+                Animations.alphaManipulation(view: notesPlaceHolder[3])
             case Utils.notes[4]:
                 // SOL
                 AudioServicesPlaySystemSound(noteSoundIds[4].noteId)
+                Animations.alphaManipulation(view: notesPlaceHolder[4])
             case Utils.notes[5]:
                 // LA
                 AudioServicesPlaySystemSound(noteSoundIds[5].noteId)
+                Animations.alphaManipulation(view: notesPlaceHolder[5])
             case Utils.notes[6]:
                 // SI
                 AudioServicesPlaySystemSound(noteSoundIds[6].noteId)
+                Animations.alphaManipulation(view: notesPlaceHolder[6])
             case Utils.notes.last!:
                 // DO#
                 AudioServicesPlaySystemSound(noteSoundIds[7].noteId)
+                Animations.alphaManipulation(view: notesPlaceHolder[7])
             default:
-                
                 break
             }
         }

@@ -1,15 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="n2D-Qo-1uf">
     <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Keyboard View Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="1gJ-DS-9FN">
+            <objects>
+                <tabBarController id="n2D-Qo-1uf" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="O6C-hD-wRW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="F36-fl-oa3" kind="relationship" relationship="viewControllers" id="WWS-5n-E7P"/>
+                        <segue destination="qp2-19-QfF" kind="relationship" relationship="viewControllers" id="odH-Fv-Bf6"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cjw-2L-1SV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1574" y="22"/>
+        </scene>
+        <!--Piano-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="KeyboardViewController" customModule="iNotes" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,10 +37,69 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Piano" id="qme-df-y1N"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="25.637181409295355" y="16.800000000000001"/>
+            <point key="canvasLocation" x="-22" y="-423"/>
+        </scene>
+        <!--Queen - The Show Must Go On-->
+        <scene sceneID="k1Z-DY-Qor">
+            <objects>
+                <viewController id="Vpg-ah-KJ4" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="j9c-Qb-axZ">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="23A-Cb-9LT"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Queen - The Show Must Go On" id="Dni-ay-a0t"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ybr-cH-y8b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-22" y="418"/>
+        </scene>
+        <!--Piano-->
+        <scene sceneID="peg-N5-z9k">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="F36-fl-oa3" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Piano" image="piano" id="CUk-HC-rbN"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eSa-8l-oVe">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="32"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Sqm-Xm-Cmt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="et2-fE-BbZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-703" y="-422"/>
+        </scene>
+        <!--Free song-->
+        <scene sceneID="ozr-97-SBZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qp2-19-QfF" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Free song" image="song" id="9sd-3s-KdA"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Etg-OR-g0e">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="32"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Vpg-ah-KJ4" kind="relationship" relationship="rootViewController" id="Kx2-x6-KQN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xJw-GB-svc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-704" y="418"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="piano" width="50" height="50"/>
+        <image name="song" width="48" height="48"/>
+    </resources>
 </document>
