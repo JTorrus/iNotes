@@ -31,15 +31,4 @@ class Utils {
         
         return arrayOfSoundsId
     }
-    
-    static func generateMusicUrl() -> AVAudioPlayer? {
-        var musicAudioPlayer: AVAudioPlayer?
-        
-        if let soundMusicUrl = Bundle.main.url(forResource: musicFile, withExtension: defaultExtension) {
-            musicAudioPlayer = try! AVAudioPlayer(contentsOf: soundMusicUrl)
-            musicAudioPlayer!.prepareToPlay()
-        }
-        
-        return musicAudioPlayer
-    }
 }

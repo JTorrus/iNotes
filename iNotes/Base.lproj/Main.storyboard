@@ -50,14 +50,39 @@
                     <view key="view" contentMode="scaleToFill" id="j9c-Qb-axZ">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="queen" highlightedImage="pause" translatesAutoresizingMaskIntoConstraints="NO" id="qlL-Gd-jtb">
+                                <rect key="frame" x="132" y="56" width="402" height="263"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
+                        <constraints>
+                            <constraint firstItem="qlL-Gd-jtb" firstAttribute="leading" secondItem="23A-Cb-9LT" secondAttribute="leading" constant="132" id="AiJ-wT-Gyy"/>
+                            <constraint firstItem="qlL-Gd-jtb" firstAttribute="top" secondItem="23A-Cb-9LT" secondAttribute="top" constant="24" id="Kaq-91-RYm"/>
+                            <constraint firstItem="qlL-Gd-jtb" firstAttribute="centerY" secondItem="j9c-Qb-axZ" secondAttribute="centerY" id="Mdx-hc-pQB"/>
+                            <constraint firstItem="qlL-Gd-jtb" firstAttribute="centerX" secondItem="j9c-Qb-axZ" secondAttribute="centerX" id="SqW-gw-cMl"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="23A-Cb-9LT"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Queen - The Show Must Go On" id="Dni-ay-a0t"/>
+                    <navigationItem key="navigationItem" title="Queen - The Show Must Go On" id="Dni-ay-a0t">
+                        <barButtonItem key="leftBarButtonItem" tag="1" title="Restart" id="GJr-tc-N5W">
+                            <connections>
+                                <action selector="actionPerformed:" destination="Vpg-ah-KJ4" id="XgD-FM-UxP"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="pause" id="xxr-S7-Yc0">
+                            <connections>
+                                <action selector="actionPerformed:" destination="Vpg-ah-KJ4" id="7X5-qP-KcL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="controlButton" destination="xxr-S7-Yc0" id="vJj-V3-T37"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ybr-cH-y8b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-22" y="418"/>
+            <point key="canvasLocation" x="-22.03898050974513" y="416.80000000000001"/>
         </scene>
         <!--Piano-->
         <scene sceneID="peg-N5-z9k">
@@ -99,7 +124,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="pause" width="48" height="48"/>
         <image name="piano" width="50" height="50"/>
+        <image name="queen" width="480" height="395"/>
         <image name="song" width="48" height="48"/>
     </resources>
 </document>

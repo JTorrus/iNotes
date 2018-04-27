@@ -10,18 +10,32 @@ import UIKit
 import AVFoundation
 
 class QueenViewController: UIViewController {
+    var musicAudioPlayer: AVAudioPlayer?
+    @IBOutlet weak var controlButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let musicSoundPlayer = Utils.generateMusicUrl() {
-            if initAVAudioSession() {
-                prepareAudioPlayer(musicSoundPlayer)
-            }
+        if initAVAudioSession() {
+            prepareAudioPlayer()
+            startPlaying()
         }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    @IBAction func actionPerformed(_ sender: UIBarButtonItem) {
+        if sender.tag == 0 {
+            if musicAudioPlayer!.isPlaying {
+                stopPlaying()
+            } else {
+                startPlaying()
+            }
+        } else {
+            resetSong()
+        }
     }
     
     private func initAVAudioSession() -> Bool {
@@ -35,8 +49,27 @@ class QueenViewController: UIViewController {
         return false
     }
     
-    private func prepareAudioPlayer(_ musicSoundPlayer: AVAudioPlayer) {
-        musicSoundPlayer.numberOfLoops = Int(-1)
-        musicSoundPlayer.play()
+    private func prepareAudioPlayer() {
+        if let soundMusicUrl = Bundle.main.url(forResource: "tsmgo", withExtension: "mp3") {
+            musicAudioPlayer = try! AVAudioPlayer(contentsOf: soundMusicUrl)
+            musicAudioPlayer!.prepareToPlay()
+            musicAudioPlayer!.numberOfLoops = Int(-1)
+        }
     }
+    
+    private func startPlaying() {
+        musicAudioPlayer!.play()
+        controlButton.image = UIImage(named: "pause")
+    }
+    
+    private func stopPlaying() {
+        musicAudioPlayer!.stop()
+        controlButton.image = UIImage(named: "play")
+    }
+    
+    private func resetSong() {
+        musicAudioPlayer!.currentTime = 0
+        startPlaying()
+    }
+    
 }
