@@ -11,7 +11,7 @@ import AudioToolbox
 import AVFoundation
 
 class Utils {
-    static let notes = ["DO", "RE", "MI", "FA", "SOL", "LA", "SI", "DO#"]
+    static let notes = ["DO", "RE", "MI", "FA", "SOL", "LA", "SI", "DO#", "glissando"]
     static let musicFile = "tsmgo"
     static let defaultExtension = "mp3"
     

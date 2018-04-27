@@ -118,7 +118,7 @@ class KeyboardViewController: UIViewController {
                 // SI
                 AudioServicesPlaySystemSound(noteSoundIds[6].noteId)
                 Animations.alphaManipulation(view: notesPlaceHolder[6])
-            case Utils.notes.last!:
+            case Utils.notes[7]:
                 // DO#
                 AudioServicesPlaySystemSound(noteSoundIds[7].noteId)
                 Animations.alphaManipulation(view: notesPlaceHolder[7])
@@ -129,6 +129,6 @@ class KeyboardViewController: UIViewController {
     }
     
     @objc func glissando (gesture: UISwipeGestureRecognizer) {
-        print("GLISSANDO")
+        AudioServicesPlaySystemSound(noteSoundIds.last!.noteId)
     }
 }
