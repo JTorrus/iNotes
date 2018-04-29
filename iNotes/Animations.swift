@@ -28,15 +28,17 @@ class Animations {
         }
     }
     
-    static func scaleTransformation(views: [UIView]) {
-        let scaleTransformation = CGAffineTransform(scaleX: 1.25, y: 1.25)
+    static func rotationTransformation(views: [UIView]) {
+        let scaleTransformation = CGAffineTransform(rotationAngle: 30 * CGFloat.pi / 180)
         let scaleDefault = CGAffineTransform.identity
         
         for i in 0 ..< views.count {
-            UIView.animate(withDuration: 0.20, delay: Double(i / 2), options: .autoreverse, animations: {
+            UIView.animate(withDuration: 0.35, delay: Double(Double(i) * 0.1), options: .autoreverse, animations: {
                 views[i].transform = scaleTransformation
+                views[i].backgroundColor = UIColor.purple
             }, completion: { finished in
                 views[i].transform = scaleDefault
+                views[i].backgroundColor = UIColor.white
             })
         }
     }

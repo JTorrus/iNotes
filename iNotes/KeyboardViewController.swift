@@ -91,44 +91,48 @@ class KeyboardViewController: UIViewController {
             switch identifier {
             case Utils.notes.first!:
                 // DO
-                AudioServicesPlaySystemSound(noteSoundIds[0].noteId)
+                playSound(noteSoundIds[0].noteId)
                 Animations.alphaManipulation(view: notesPlaceHolder[0])
             case Utils.notes[1]:
                 // RE
-                AudioServicesPlaySystemSound(noteSoundIds[1].noteId)
+                playSound(noteSoundIds[1].noteId)
                 Animations.alphaManipulation(view: notesPlaceHolder[1])
             case Utils.notes[2]:
                 // MI
-                AudioServicesPlaySystemSound(noteSoundIds[2].noteId)
+                playSound(noteSoundIds[2].noteId)
                 Animations.alphaManipulation(view: notesPlaceHolder[2])
             case Utils.notes[3]:
                 // FA
-                AudioServicesPlaySystemSound(noteSoundIds[3].noteId)
+                playSound(noteSoundIds[3].noteId)
                 Animations.alphaManipulation(view: notesPlaceHolder[3])
             case Utils.notes[4]:
                 // SOL
-                AudioServicesPlaySystemSound(noteSoundIds[4].noteId)
+                playSound(noteSoundIds[4].noteId)
                 Animations.alphaManipulation(view: notesPlaceHolder[4])
             case Utils.notes[5]:
                 // LA
-                AudioServicesPlaySystemSound(noteSoundIds[5].noteId)
+                playSound(noteSoundIds[5].noteId)
                 Animations.alphaManipulation(view: notesPlaceHolder[5])
             case Utils.notes[6]:
                 // SI
-                AudioServicesPlaySystemSound(noteSoundIds[6].noteId)
+                playSound(noteSoundIds[6].noteId)
                 Animations.alphaManipulation(view: notesPlaceHolder[6])
             case Utils.notes[7]:
                 // DO#
-                AudioServicesPlaySystemSound(noteSoundIds[7].noteId)
+                playSound(noteSoundIds[7].noteId)
                 Animations.alphaManipulation(view: notesPlaceHolder[7])
             default:
                 break
             }
         }
     }
-    
+
+    private func playSound(_ noteId: SystemSoundID) {
+        AudioServicesPlaySystemSound(noteId)
+    }
+
     @objc func glissando (gesture: UISwipeGestureRecognizer) {
         AudioServicesPlaySystemSound(noteSoundIds.last!.noteId)
-        Animations.scaleTransformation(views: keyBoard)
+        Animations.rotationTransformation(views: keyBoard)
     }
 }
