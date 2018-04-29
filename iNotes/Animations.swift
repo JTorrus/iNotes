@@ -27,4 +27,10 @@ class Animations {
             })
         }
     }
+    
+    static func scaleTransformation(views: [UIView]) {
+        for view in views {
+            
+        }
+    }
 }

@@ -37,10 +37,9 @@ class KeyboardViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    func generateKeys(_ keyBoard: inout [UIView]) {
+    private func generateKeys(_ keyBoard: inout [UIView]) {
         for i in 0 ..< Int(keysNumber) {
             let newKey = UIView(frame: CGRect(x: CGFloat(i) * keysWidth!, y: offset, width: keysWidth!, height: keysHeight!))
             let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tap(gesture:)))
@@ -55,7 +54,7 @@ class KeyboardViewController: UIViewController {
         }
     }
     
-    func generatePlaceHolder(_ notesPlaceHolder: inout [UIView]) {
+    private func generatePlaceHolder(_ notesPlaceHolder: inout [UIView]) {
         let totalHeight = self.view.frame.height - offset
         let labelWidth = keysWidth! - 30
         
@@ -75,7 +74,7 @@ class KeyboardViewController: UIViewController {
         }
     }
     
-    func drawLayout() {
+    private func drawLayout() {
         for key in keyBoard {
             self.view.addSubview(key)
         }

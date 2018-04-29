@@ -11,7 +11,9 @@ import AVFoundation
 
 class QueenViewController: UIViewController {
     var musicAudioPlayer: AVAudioPlayer?
+    let musicFileName = "tsmgo"
     @IBOutlet weak var controlButton: UIBarButtonItem!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +52,7 @@ class QueenViewController: UIViewController {
     }
     
     private func prepareAudioPlayer() {
-        if let soundMusicUrl = Bundle.main.url(forResource: "tsmgo", withExtension: "mp3") {
+        if let soundMusicUrl = Bundle.main.url(forResource: musicFileName, withExtension: Utils.defaultExtension) {
             musicAudioPlayer = try! AVAudioPlayer(contentsOf: soundMusicUrl)
             musicAudioPlayer!.prepareToPlay()
             musicAudioPlayer!.numberOfLoops = Int(-1)
