@@ -29,8 +29,15 @@ class Animations {
     }
     
     static func scaleTransformation(views: [UIView]) {
-        for view in views {
-            
+        let scaleTransformation = CGAffineTransform(scaleX: 1.25, y: 1.25)
+        let scaleDefault = CGAffineTransform.identity
+        
+        for i in 0 ..< views.count {
+            UIView.animate(withDuration: 0.20, delay: Double(i / 2), options: .autoreverse, animations: {
+                views[i].transform = scaleTransformation
+            }, completion: { finished in
+                views[i].transform = scaleDefault
+            })
         }
     }
 }

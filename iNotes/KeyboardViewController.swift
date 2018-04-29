@@ -129,5 +129,6 @@ class KeyboardViewController: UIViewController {
     
     @objc func glissando (gesture: UISwipeGestureRecognizer) {
         AudioServicesPlaySystemSound(noteSoundIds.last!.noteId)
+        Animations.scaleTransformation(views: keyBoard)
     }
 }
